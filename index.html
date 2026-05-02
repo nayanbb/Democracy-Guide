@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Democracy Guide: Indian Election Assistant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <div class="app-container">
+        <!-- Sidebar / Header area -->
+        <header class="app-header">
+            <div class="logo">
+                <div class="logo-icon">🇮🇳</div>
+                <h1>Democracy Guide</h1>
+            </div>
+            
+            <div class="header-actions">
+                <div class="progress-container">
+                    <div class="level-indicator">Level <span id="current-level">1</span>: <span id="level-title">Novice</span></div>
+                    <div class="progress-bar-wrapper">
+                        <div class="progress-bar" id="xp-bar" style="width: 0%;"></div>
+                    </div>
+                    <div class="xp-text"><span id="current-xp">0</span> / <span id="next-level-xp">100</span> XP</div>
+                </div>
+            </div>
+        </header>
+
+        <div class="dashboard-content">
+            <!-- Main Chat Area (Left Panel) -->
+            <main class="chat-container">
+                <div class="chat-history" id="chat-history">
+                    <!-- Messages will be injected here via JS -->
+                </div>
+                
+                <div class="options-container" id="options-container">
+                    <!-- Interactive choice buttons injected here via JS -->
+                </div>
+            </main>
+
+            <!-- Sidebar Area (Right Panel) -->
+            <aside class="dashboard-sidebar">
+                
+                <!-- Quick Links Section -->
+                <section class="sidebar-section links-section">
+                    <h2 class="section-title"><span class="title-icon">🔗</span> Official Portals</h2>
+                    <div class="links-grid">
+                        <a href="https://eci.gov.in/" target="_blank" class="grid-link eci-link">
+                            <span class="link-icon">🏛️</span>
+                            <span>ECI Home</span>
+                        </a>
+                        <a href="https://voters.eci.gov.in/" target="_blank" class="grid-link nvsp-link">
+                            <span class="link-icon">📝</span>
+                            <span>Voter Portal</span>
+                        </a>
+                        <a href="https://affidavit.eci.gov.in/" target="_blank" class="grid-link aff-link">
+                            <span class="link-icon">📄</span>
+                            <span>Affidavits</span>
+                        </a>
+                        <a href="https://cvygil.eci.gov.in/" target="_blank" class="grid-link cvigil-link">
+                            <span class="link-icon">📱</span>
+                            <span>cVIGIL App</span>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- Election Laws Section -->
+                <section class="sidebar-section laws-section">
+                    <h2 class="section-title"><span class="title-icon">⚖️</span> Election Laws</h2>
+                    <div class="accordion-container">
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                <span class="acc-icon">📜</span>
+                                <span>RP Act, 1951</span>
+                                <span class="acc-arrow">▼</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p>The Representation of the People Act, 1951 governs the conduct of elections. Section 8 details disqualifications on conviction for certain offenses to keep criminals out of politics.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                <span class="acc-icon">💰</span>
+                                <span>Expenditure Limits</span>
+                                <span class="acc-arrow">▼</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p>Candidates must strictly adhere to spending limits (e.g., ₹95 Lakh for major states in Lok Sabha). Daily accounts must be maintained and submitted to the ECI.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                <span class="acc-icon">🛑</span>
+                                <span>Model Code of Conduct</span>
+                                <span class="acc-arrow">▼</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p>The MCC ensures a level playing field. It bans using religion/caste for votes, distributing money/liquor, and misusing government machinery.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                <span class="acc-icon">📰</span>
+                                <span>Paid News Ban</span>
+                                <span class="acc-arrow">▼</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p>Paying media to disguise advertisements as news is an electoral offense. All political ads require pre-certification from the MCMC.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+            </aside>
+        </div>
+    </div>
+
+    <!-- Intro Modal / Role Selection (Hidden by default, shown on start) -->
+    <div class="modal-overlay" id="start-modal">
+        <div class="modal-content glass-panel">
+            <h2>Welcome to Democracy Guide</h2>
+            <p>Experience the Indian election process step-by-step. How would you like to participate today?</p>
+            
+            <div class="role-cards">
+                <div class="role-card" data-role="voter">
+                    <div class="role-icon">🗳️</div>
+                    <h3>The Voter</h3>
+                    <p>Learn how to register, understand your constituency, and cast your vote on Election Day.</p>
+                </div>
+                <div class="role-card" data-role="candidate">
+                    <div class="role-icon">📢</div>
+                    <h3>The Candidate</h3>
+                    <p>File your nomination, campaign, and await the results from the Election Commission.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
